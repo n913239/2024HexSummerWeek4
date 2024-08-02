@@ -1,0 +1,57 @@
+$gap: 24px;
+$columns-num: 12;
+
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding-left: calc($gap / 2);
+    padding-right: calc($gap / 2);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -calc($gap / 2);
+    margin-right: -calc($gap / 2);
+}
+
+.col-2 {
+    width: 20%;
+    padding-left: calc($gap / 2);
+    padding-right: calc($gap / 2);
+}
+
+.col-6 {
+    width: 50%;
+    padding-left: calc($gap / 2);
+    padding-right: calc($gap / 2);
+}
+
+@for $i from 1 through $columns-num {
+    .col-#{$i} {
+        // 100% * (1 / 12)...
+        width: 100% * calc($i / $columns-num);
+        padding-left: calc($gap / 2);
+        padding-right: calc($gap / 2);
+    }
+}
+
+@include tablet {
+    @for $i from 1 through $columns-num {
+        .col-md-#{$i} {
+            width: 100% * calc($i / $columns-num);
+            padding-left: calc($gap / 2);
+            padding-right: calc($gap / 2);
+        }
+    }
+}
+
+@include mobile {
+    @for $i from 1 through $columns-num {
+        .col-sm-#{$i} {
+            width: 100% * calc($i / $columns-num);
+            padding-left: calc($gap / 2);
+            padding-right: calc($gap / 2);
+        }
+    }
+}

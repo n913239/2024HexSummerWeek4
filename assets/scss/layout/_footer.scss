@@ -1,0 +1,21 @@
+.footer {
+    background: $primary;
+    color: #D1D1D1;
+    font-size: 16px;
+    padding-top: 60px;
+}
+
+.footer-nav {
+    gap: 48px;
+    padding-bottom: 36px;
+}
+
+@include mobile {
+    .footer {
+        padding-top: 24px;
+    }
+
+    .footer .footer-nav {
+        display: none;
+    }
+}
